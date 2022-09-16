@@ -1,0 +1,98 @@
+.card {
+  width: 185px;
+  font-weight: 500;
+  margin: 0 70px;
+  &.pre > div {
+    background: pink;
+  }
+  &.learn > div {
+    background: #a3d09b;
+  }
+  &.complete > div {
+    background: #e2e2e2;
+  }
+  .status {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .list {
+    min-height: 400px;
+    overflow: hidden;
+    > div {
+      margin: 25px auto;
+    }
+    .add {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #b68989;
+      border-radius: 50%;
+      background: #fff;
+      position: relative;
+      cursor: pointer;
+      &::before,
+      &::after {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &::before {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 30px;
+        background: #b68989;
+      }
+      &::after {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 1px;
+        background: #b68989;
+      }
+    }
+
+    .item {
+      width: 150px;
+      border: 2px solid black;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      background: #fff;
+      position: relative;
+      cursor: pointer;
+      .del {
+        background: #f37f7f;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 17px;
+        font-size: 20px;
+        font-weight: 100;
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        cursor: pointer;
+        display: none;
+      }
+      &:hover .del {
+        display: block;
+      }
+      input {
+        width: 100%;
+        height: 21px;
+        border: none;
+        outline: none;
+        background: transparent;
+        box-sizing: border-box;
+        padding: 0 15px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 750px) {
+  .card {
+    margin: 0 30px;
+  }
+}
